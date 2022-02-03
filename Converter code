@@ -1,0 +1,60 @@
+import time
+
+base = input("Enter base number:")
+exponent = input("To the power of?")
+list = []
+var = 0
+answer = 1
+byte = [1, 2, 4, 8, 16, 32, 64, 128]
+bit1 = 0
+bit2 = 0
+bit3 = 0
+bit4 = 0
+bit5 = 0
+bit6 = 0
+bit7 = 0
+bit8 = 0
+bits = 8
+print("______")
+print(" STEPS ")
+while var < exponent:
+    answer2 = base * answer
+    answer = answer2
+    list.append(answer)
+    var += 1
+print list
+print("______")
+print(" FINAL ANSWER ")
+print(answer)
+convert = input("Enter a number up to 255 you would like converted to binary")
+
+for bits in byte:
+    if convert >= byte[7]:
+        bit8 = 1
+        convert -= 128
+    if convert >= byte[6]:
+        bit7 = 1
+        convert -= 64
+    if convert >= byte[5]:
+         bit6 = 1
+         convert -= 32
+    if convert >= byte[4]:
+        bit5 = 1
+        convert -= 16
+    if convert >= byte[3]:
+        bit4 = 1
+        convert -= 8
+    if convert >= byte[2]:
+        bit3 = 1
+        convert -= 4
+    if convert >= byte[1]:
+        bit2 = 1
+        convert -= 2
+    if convert >= byte[0]:
+        bit1 = 1
+        convert -= 1
+
+
+bitlist = [bit1, bit2, bit3, bit4, bit5, bit6, bit7, bit8]
+bitlist.reverse()
+print(bitlist)
